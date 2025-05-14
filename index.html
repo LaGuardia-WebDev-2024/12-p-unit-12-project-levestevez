@@ -1,18 +1,17 @@
 <!-- Unit 12 Project
 Requirements
-[  ] $() Select by Element, ID AND Class 
-[  ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ - ] $() Select by Element, ID AND Class 
+[ - ] Use Three Different jQuery Methods 
+[ - ] Add Five CSS Declarations
+[ - ] Include Three Images
 
 Select ONE Additional 
 [ no ] Feature 1 - Use .addClass() method
 [ no ] Feature 2 - Use a variable in javaScript 
 [ no ] Feature 3 - Use .mouseover() method
 [ no ] Feature 4 - Use .show() method
-[ no ] Feature 5 - Use .append() method
+[ yes ] Feature 5 - Use .append() method
 -->
-
 
 <!DOCTYPE html>
 <html>
@@ -29,33 +28,64 @@ Select ONE Additional
     <ol>
       <li>
         <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <p class="memo1">More about this memory.</p>
+        <img
+             id="spong1"
+             src="https://media.tenor.com/1b6UfpEyE5YAAAAM/spongebob-spongebob-squarepants.gif"
+             style="display: none"
+        />
       </li>
 
       <li>
         <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <p class="memo2">More about this memory.</p>
+        <img
+             id="spong2"
+             src="https://media1.tenor.com/m/LiDD5Bl5AXEAAAAd/spongebob-the.gif"
+             style="display: none"
+        />
       </li>
 
       <li>
         <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <p class="memo3">More about this memory</p>
+        <img
+             id="spong3"
+             src="https://media.tenor.com/EdtjCL6GOwEAAAAM/spongebob-spongebob-squarepants.gif"
+             style="display: none"
+        />
       </li>
     </ol>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
+        $("#mem1").css("color", "#90b7db");
+        $(".memo1").text("The spring band concert!!");
+        $("#spong1").show(2000);
       });
 
       $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
+        $("#mem2").css("color", "#647e97");
+        $(".memo2").text("Being done with college apps");
+        $("#spong2").show(2000);
       });
 
       $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
+        $("#mem3").css("color", "#40505f");
+        $(".memo3").text("Hanging out with friends");
+        $("#spong3").show(2000);
       });
+
+      $("h1").html("<u>My Top 3 Memories of This Year<u/>");
+      $("h1").css("color", "#11599d");
+
+      var newP = $("<p>");
+      newP.text("Every memory is wonderful...");
+      newP.addClass("para");
+      $("body").append(newP);
+      
+      $(".para").css("color", "#0d3c68");
     </script>
   </body>
 </html>
